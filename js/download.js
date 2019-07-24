@@ -14,19 +14,28 @@ var iosPrefix = 'itms-services://?action=download-manifest&url=';
 // var hostUrl = "http://luckyparty.minervip.io"
 var hostUrl = "http://106.75.27.25:8086"
 downFun()
- function downFun() { 
-    $.ajax({  
-        type : "get",  
-        async:false,  
+function downFun() { 
+  
+    $.ajax({
         url : "http://106.75.27.25:8086/api/v1/version/appVersion?custom=LuckyParty",  
-        dataType : "jsonp",//数据类型为jsonp  
-        success : function(data){  
-            alert(JSON.stringify(data))
-        },  
-        error:function(){  
-            alert('fail');  
-        }  
+        type: "get",
+        async:false,
+        data: {},
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        jsonpCallback: 'login',
+        success: function(json){
+            alert(json.data);
+            alert(json.retCode);
+            if(!json.status){
+                alert(json.msg);
+            }
+        },
+        error : function() {
+            alert("异常！");
+        }
     });
+ 
 }
 // function downFun() {
 //     $.get(hostUrl + '/api/v1/version/appVersion?custom=LuckyParty', function(data) {
