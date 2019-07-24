@@ -14,21 +14,34 @@ var iosPrefix = 'itms-services://?action=download-manifest&url=';
 // var hostUrl = "http://luckyparty.minervip.io"
 var hostUrl = "http://106.75.27.25:8086"
 downFun()
-
-
-function downFun() {
-    $.get(hostUrl + '/api/v1/version/appVersion?custom=LuckyParty', function(data) {
-        if (data.code == 200) {
-            ios = iosPrefix + data.data.ios.downloadUrl;
-            ad = data.data.android.downloadUrl;
-            // ios =iosPrefix+'https://luckyparty.oss-cn-beijing.aliyuncs.com/public/download/luckyparty/v2.0.4/manifest.plist';
-            // ad ='http://luckyparty.ufile.ucloud.com.cn/apk/LuckyParty_V2.0.3.apk';
-            $('.js-ios').attr("href", ios)
-                // $('.js-ad').attr("href",ad)
-            $('.pcjs-ad').attr("href", ad)
-        }
-    }, "json")
+ function downFun() { 
+    $.ajax({  
+        type : "get",  
+        async:false,  
+        url : "http://106.75.27.25:8086/api/v1/version/appVersion?custom=LuckyParty",  
+        dataType : "jsonp",//数据类型为jsonp  
+        jsonp: "jsonpCallback",//服务端用于接收callback调用的function名的参数  
+        success : function(data){  
+            alert(JSON.stringify(data))
+        },  
+        error:function(){  
+            alert('fail');  
+        }  
+    });
 }
+// function downFun() {
+//     $.get(hostUrl + '/api/v1/version/appVersion?custom=LuckyParty', function(data) {
+//         if (data.code == 200) {
+//             ios = iosPrefix + data.data.ios.downloadUrl;
+//             ad = data.data.android.downloadUrl;
+//             // ios =iosPrefix+'https://luckyparty.oss-cn-beijing.aliyuncs.com/public/download/luckyparty/v2.0.4/manifest.plist';
+//             // ad ='http://luckyparty.ufile.ucloud.com.cn/apk/LuckyParty_V2.0.3.apk';
+//             $('.js-ios').attr("href", ios)
+//                 // $('.js-ad').attr("href",ad)
+//             $('.pcjs-ad').attr("href", ad)
+//         }
+//     }, "json")
+// }
 
 
 //点击andriod开启遮罩,引导用户在浏览器打开
