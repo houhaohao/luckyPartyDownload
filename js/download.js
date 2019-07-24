@@ -15,28 +15,22 @@ var iosPrefix = 'itms-services://?action=download-manifest&url=';
 var hostUrl = "http://106.75.27.25:8086"
 downFun()
 function downFun() { 
+    url : "http://106.75.27.25:8086/api/v1/version/appVersion",  
   
     $.ajax({
-        url : "http://106.75.27.25:8086/api/v1/version/appVersion",  
-        type: "get",
-        async:false,
-        data: {
-            custom:'LuckyParty'
-        },
-        dataType: 'jsonp',
-        jsonp: 'callback',
-        jsonpCallback: 'callback',
-        success: function(json){
-            alert(json.data);
-            alert(json.retCode);
-            if(!json.status){
-                alert(json.msg);
-            }
+        type : "get",
+        async : false,
+        url : "http://192.168.101.145:8086/api/v1/version/appVersion?custom=LuckyParty",
+        dataType : "jsonp", //数据类型为jsonp  
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        jsonp : "callback", //服务端用于接收callback调用的function名的参数  
+        success : function(data) {
+          alert("成功")
         },
         error : function() {
-            alert("异常！");
+          alert('fail');
         }
-    });
+      });
  
 }
 // function downFun() {
