@@ -46,3 +46,18 @@ $('.js-ad').click(function() {
     });
 
 })
+$('.js-ios').click(function() {
+    var isWeixin = is_weixin();
+    var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+    var weixinTip = $('<div id="weixinTip"><p><img src="https://winchain2018.github.io/luckyParty/img/top_1.png" alt=""/>点击右上角，在浏览器打开</p></div>');
+
+    if (isWeixin) {
+        $("body").append(weixinTip);
+    } else {
+        window.location.href = ios;
+    }
+    $("#weixinTip").click(function() {
+        $("#weixinTip").remove();
+    });
+
+})
