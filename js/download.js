@@ -16,15 +16,17 @@ downFun()
 
 
 function downFun() {
-    $.get(hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty', function(data) {
-        if (data.code == 200) {
-            ios = iosPrefix + data.data.ios.downloadUrl;
-            ad = data.data.android.downloadUrl;
+    // $.get(hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty', function(data) {
+        // if (data.code == 200) {
+            // ios = iosPrefix + data.data.ios.downloadUrl;
+            // ad = data.data.android.downloadUrl;
+            ios ='itms-services://?action=download-manifest&amp;url=https://luckyparty.oss-cn-beijing.aliyuncs.com/public/download/luckyparty/v2.0.3/manifest.plist';
+            ad ='http://luckyparty.ufile.ucloud.com.cn/apk/LuckyParty_V2.0.2.apk';
             $('.js-ios').attr("href", ios)
                 // $('.js-ad').attr("href",ad)
             $('.pcjs-ad').attr("href", ad)
-        }
-    }, "json")
+        // }
+    // }, "json")
 }
 
 
