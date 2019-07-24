@@ -11,7 +11,8 @@ var ios = '';
 var ad = '';
 var iosPrefix = 'itms-services://?action=download-manifest&url=';
 // var hostUrl = "http://api.bcos.one";
-var hostUrl = "192.168.101.145:8086"
+// var hostUrl = "http://luckyparty.minervip.io"
+var hostUrl = "http://106.75.27.25:8086"
 downFun()
 
 
