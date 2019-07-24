@@ -21,7 +21,7 @@ function downFun() {
         type: "get",
         async:false,
         data: {
-        custom:'LuckyParty'
+            custom:'LuckyParty'
         },
         dataType: 'jsonp',
         jsonp: 'callback',
