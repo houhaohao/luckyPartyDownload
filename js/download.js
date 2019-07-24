@@ -25,7 +25,7 @@ function downFun() {
         },
         dataType: 'jsonp',
         jsonp: 'callback',
-        jsonpCallback: 'login',
+        jsonpCallback: 'callback',
         success: function(json){
             alert(json.data);
             alert(json.retCode);
