@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="img/favicon.ico" rel="Shortcut Icon">
+    <title class="i18n" data-title="luckyParty"></title>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+                if (!((/Android|webOS|ipad|iPhone|BlackBerry|IEMobile|Opera Mini/i).test(navigator.userAgent))) {
+                    window.location.href = 'index.html'
+                }
+            });
+        </script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .wrap {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: relative;
+        }
+        
+        .language-logo {
+            width: 100%;
+            height: 13.875rem;
+            background: url("img/down/back-title.png")no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .language {
+            width: 65px;
+            position: absolute;
+            color: #fff;
+            top: 15px;
+            left: 5%;
+            cursor: pointer;
+            z-index: 11;
+        }
+        
+        .language img {
+            display: inline-block;
+            width: 8px;
+            height: 6px;
+            transform: rotate(180deg);
+        }
+        
+        .language p {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+            line-height: 17px;
+            display: inline-block;
+            font-size: 12px;
+        }
+        
+        .logo {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .logo span {
+            display: inline-block;
+            width: 5.5rem;
+            height: 5.5rem;
+            margin: 2.75rem auto 0;
+            background: url('img/down/lucky-cion.png')no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .logo p {
+            font-size: 1.25rem;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(32, 32, 32, 1);
+        }
+        
+        .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 8%;
+        }
+        
+        .lucky-shan {
+            position: absolute;
+            bottom: 0;
+            display: inline-block;
+            width: 100%;
+            height: 2.9375rem;
+            background: url("img/down/bottom-shan.png")no-repeat;
+            background-size: 100% 100%;
+        }
+        /*遮罩层*/
+        
+        #weixinTip {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+        }
+        
+        #weixinTip img {
+            display: block;
+            width: 1rem;
+            position: fixed;
+            top: 2%;
+            right: 7%;
+        }
+        
+        #weixinTip p {
+            text-align: center;
+            margin-top: 15%;
+            padding-left: 5%;
+            padding-right: 5%;
+            font-size: 1rem;
+            color: #fff;
+        }
+        
+        .lucky-party {
+            display: inline-block;
+            background: rgba(255, 230, 0, 1);
+            border-radius: 2.03125rem;
+            border: .0625rem solid rgba(33, 33, 33, 1);
+            width: 12.0625rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+        }
+        
+        .lucky-party a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .down-first-box {
+            width: 100%;
+            text-align: center;
+            margin-top: 4%;
+        }
+        
+        .down-first {
+            display: inline-block;
+            /* width: 10.6875rem; */
+            width: 70%;
+            height: 2.5rem;
+        }
+        
+        .introduce-pic {
+            padding: 0 3.125rem;
+            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2%;
+        }
+        
+        .introduce-pic img {
+            display: inline-block;
+            width: 5rem;
+            height: 8.875rem;
+        }
+        
+        .Android-icon {
+            display: inline-block;
+            width: 1.6875rem;
+            height: 1.5625rem;
+            background: url("img/down/lucky-andriod.png")no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .Ios-icon {
+            display: inline-block;
+            width: 1.6875rem;
+            height: 1.5625rem;
+            background: url("img/down/lucky-ios.png")no-repeat;
+            background-size: 100% 100%;
+            /* margin-right: 1.2rem; */
+        }
+        
+        .ios-ad {
+            vertical-align: super;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: none">
+        <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1277599280&web_id=1277599280"></script>
+    </div>
+    <div class="wrap">
+        <!-- 背景 -->
+        <div class="language-logo">
+            <div class="language">
+                <img src="img/red-arrow.png" alt="">
+                <p class="i18n" data-title="language"></p>
+            </div>
+            <div class="logo">
+                <span></span>
+                <p class="i18n" data-title="LuckyParty"></p>
+            </div>
+        </div>
+        <!-- 中间的图片 -->
+        <div class="down-first-box"><img src="" alt="" class="down-first"></div>
+        <!-- 3张图片 -->
+        <div class="introduce-pic">
+            <img class="down1" src="" alt="">
+            <img class="down2" src="" alt="">
+            <img class="down3" src="" alt="">
+        </div>
+        <div class="btn">
+            <div class="lucky-party ad">
+                <a class="btn_ad js-ad" onclick="_czc.push(['_trackEvent','download','统计','下载量']);" style="display: inline-block">
+                    <span class="Android-icon"></span>
+                    <span class="ios-ad i18n" data-title="Android"></span>
+                </a>
+            </div>
+
+            <div class="lucky-party ios" style="margin-top: 1.25rem">
+                <a href="" onclick="_czc.push(['_trackEvent','download','统计','下载量']);" class="js-ios" style="display: inline-block">
+                    <span class="Ios-icon"></span>
+                    <span class="ios-ad i18n" data-title="Ios"></span>
+                </a>
+            </div>
+        </div>
+        <!-- <p class="i18n" style="text-align: center;font-size: .85rem;color: #fff;margin-top: .6875rem" data-title="downText"></p> -->
+        <!-- 下面的山 -->
+        <!-- <span class="lucky-shan"></span> -->
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/prompt.js"></script>
+    <script src="js/download.js"></script>
+    <script src="js/jquery.i18n.properties.js"></script>
+    <script src="js/languages.js"></script>
+    <script>
+        $(".language").click(function() {
+            if (LANGUAGE_Index == "en") {
+                LANGUAGE_Index = "zh";
+                updetiImageSrc(updeteZH);
+                loadProperties(LANGUAGE_Index)
+            } else {
+                LANGUAGE_Index = "en";
+                updetiImageSrc(updeteEN);
+                loadProperties(LANGUAGE_Index)
+            }
+        })
+        var updeteEN = [{
+            "element": ".down1 ",
+            "url": 'img/down/down-1-E.png'
+        }, {
+            "element": ".down2",
+            "url": 'img/down/down-2-E.png'
+        }, {
+            "element": ".down3",
+            "url": 'img/down/down-3-E.png'
+        }, {
+            "element": ".down-first-box img",
+            "url": 'img/down/down-first-E.png'
+        }, ]
+        var updeteZH = [{
+            "element": ".down1 ",
+            "url": 'img/down/down-1.png'
+        }, {
+            "element": ".down2",
+            "url": 'img/down/down-2.png'
+        }, {
+            "element": ".down3",
+            "url": 'img/down/down-3.png'
+        }, {
+            "element": ".down-first-box img",
+            "url": 'img/down/down-first.png'
+        }, ]
+        if (LANGUAGE_Index == "en") {
+            updetiImageSrc(updeteEN);
+        } else {
+            updetiImageSrc(updeteZH);
+        }
+        loadProperties(LANGUAGE_Index); //加载语言
+    </script>
+</body>
+
+</html>

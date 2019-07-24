@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title class="i18n" data-title="share"></title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <style>
+        .wrap {
+            box-sizing: border-box;
+            padding-top: 3.5rem;
+            width: 100%;
+            height: 100%;
+            background: url("../img/share/shareBj.png");
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .share {
+            width: 13.75rem;
+            height: 7.75rem;
+            /* margin-top: 3.75rem; */
+            margin-bottom: 2.8125rem
+        }
+        
+        .content {
+            text-align: center;
+            width: 100%;
+        }
+        
+        .erweima {
+            width: 9.1875rem;
+            height: 9.1875rem;
+            background: #FFFFFF;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: .3125rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .erweima canvas {
+            width: 100%;
+        }
+        
+        .hideImg {
+            display: none;
+        }
+        
+        .share-bottom {
+            width: 100%;
+            height: 14.25rem;
+            margin-top: -2rem
+        }
+        
+        .share-bottom img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content">
+            <img class="share" src="" alt="">
+            <div class="erweima "></div>
+            <div class="share-bottom">
+                <img src="../img/share/share-bottom.png" alt="">
+            </div>
+        </div>
+        <div class="hideImg">
+            <!-- <img id="img-buffer" src="/img/share/erweimaLogo.png" alt=""> -->
+        </div>
+
+    </div>
+
+
+
+
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/prompt.js"></script>
+<script src="../js/jquery.i18n.properties.js"></script>
+<script src="../js/languages.js"></script>
+<script src="../js/jquery.qrcode.min.js"></script>
+<script>
+    // jQuery('.erweima').qrcode({
+    //     render: "canvas",
+    //     width: 180,
+    //     height: 180,
+    //     text: "http://d.51win.vip/d/luckyParty"
+    // });
+    $(function() {
+        var img = new Image();
+        img.addEventListener("load", function() {
+            $(".hideImg").html(img)
+        }, false);
+        img.src = '../img/share/erweimaLogo.png';
+        img.onload = function() {
+            var options = {
+                render: "canvas",
+                ecLevel: 'H', //识别度
+                fill: '#000', //二维码颜色
+                background: '#ffffff', //背景颜色
+                quiet: 0, //边距
+                width: 200, //宽度
+                height: 200,
+                text: "https://winchain2018.github.io/luckyParty/", //二维码内容
+                //中间logo start
+                mode: 4,
+                mSize: 30 * 0.01,
+                mPosX: 50 * 0.01,
+                mPosY: 50 * 0.01,
+                image: $('.hideImg img')[0], //logo图片
+                //中间logo end
+                label: 'jQuery.qrcode',
+                fontname: 'Ubuntu',
+                fontcolor: '#ff9818',
+            };
+            $('.erweima').empty().qrcode(options);
+        }
+    })
+    var updeteENSrc = [{
+        "element": ".share",
+        "url": '../img/share/shareImg-E.png'
+    }, ]
+    var updeteZHSrc = [{
+        "element": ".share",
+        "url": '../img/share/shareImg.png'
+    }, ]
+    LANGUAGE_Index
+    if (LANGUAGE_Index == "en") {
+        updetiImageSrc(updeteENSrc)
+    } else {
+        updetiImageSrc(updeteZHSrc)
+    }
+    loadProperties(LANGUAGE_Index); //加载语言
+</script>
+
+</html>
