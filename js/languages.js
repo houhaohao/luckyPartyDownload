@@ -1,9 +1,9 @@
-var LANGUAGE_Index = "en"; //标识语言  en英文 zh中文 
+var LANGUAGE_Index = "zh"; //标识语言  en英文 zh中文 
 var language = GetQueryString("language")
-if ((language != null && language == '1') || language == 'zh') {
-    LANGUAGE_Index = "zh"
-} else {
+if ((language != null && language == '1') || language == 'en') {
     LANGUAGE_Index = "en"
+} else {
+    LANGUAGE_Index = "zh"
 }
 
 // loadProperties(LANGUAGE_Index); //加载语言
