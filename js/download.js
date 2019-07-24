@@ -17,10 +17,12 @@ downFun()
 function downFun() { 
   
     $.ajax({
-        url : "http://106.75.27.25:8086/api/v1/version/appVersion?custom=LuckyParty",  
+        url : "http://106.75.27.25:8086/api/v1/version/appVersion",  
         type: "get",
         async:false,
-        data: {},
+        data: {
+        custom:'LuckyParty'
+        },
         dataType: 'jsonp',
         jsonp: 'callback',
         jsonpCallback: 'login',
