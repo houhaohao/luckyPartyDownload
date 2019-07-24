@@ -23,7 +23,7 @@ function updetiImageSrc(obj) {
 function loadProperties(type) {
     jQuery.i18n.properties({
         name: 'strings', // 资源文件名称  
-      	path: 'https://winchain2018.github.io/luckyParty/languages/', // 资源文件所在目录路径  
+      	path: 'https://houhaohao.github.io/luckyParty/languages/', // 资源文件所在目录路径  
         mode: 'map', // 模式：变量或 Map  
         language: type, // 对应的语言  
         cache: false,
