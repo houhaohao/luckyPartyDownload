@@ -20,7 +20,6 @@ downFun()
         async:false,  
         url : "http://106.75.27.25:8086/api/v1/version/appVersion?custom=LuckyParty",  
         dataType : "jsonp",//数据类型为jsonp  
-        jsonp: "jsonpCallback",//服务端用于接收callback调用的function名的参数  
         success : function(data){  
             alert(JSON.stringify(data))
         },  
