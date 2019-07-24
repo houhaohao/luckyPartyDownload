@@ -17,7 +17,7 @@ downFun()
 
 
 function downFun() {
-    $.get(hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty', function(data) {
+    $.get(hostUrl + '/api/v1/version/appVersion?custom=LuckyParty', function(data) {
         if (data.code == 200) {
             ios = iosPrefix + data.data.ios.downloadUrl;
             ad = data.data.android.downloadUrl;
