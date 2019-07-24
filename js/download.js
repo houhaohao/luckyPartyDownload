@@ -19,7 +19,7 @@ function downFun() {
     $.ajax({
         type : "get",
         async : false,
-        url : "http://192.168.101.145:8086/api/v1/version/appVersion?custom=LuckyParty",
+        url : "http://106.75.27.25:8086/api/v1/version/appVersion?custom=LuckyParty",
         dataType : "jsonp", //数据类型为jsonp  
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         jsonp : "callback", //服务端用于接收callback调用的function名的参数  
