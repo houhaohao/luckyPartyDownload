@@ -15,7 +15,6 @@ var iosPrefix = 'itms-services://?action=download-manifest&url=';
 var hostUrl = "http://106.75.27.25:8086"
 downFun()
 function downFun() { 
-    url : "http://106.75.27.25:8086/api/v1/version/appVersion",  
   
     $.ajax({
         type : "get",
