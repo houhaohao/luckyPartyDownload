@@ -10,11 +10,9 @@ function is_weixin() {
 var ios = '';
 var ad = '';
 var iosPrefix = 'itms-services://?action=download-manifest&url=';
-// var hostUrl = "http://api.bcos.one";
 var hostUrl = "https://luckyparty.minervip.io"
-// var hostUrl = "http://106.75.27.25:8086"
 downFun()
-function downFun2() {
+function downFun() {
     $.get(hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty', function(data) {
         if (data.code == 200) {
             ios = iosPrefix + data.data.ios.downloadUrl;
@@ -25,45 +23,14 @@ function downFun2() {
         }
     }, "json")
 }
-function downFun() { 
-  
-    $.ajax({
-        type : "get",
-        async : false,
-        url : hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty',
-        dataType : "jsonp", //数据类型为jsonp  
-        contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        jsonp : "callback", //服务端用于接收callback调用的function名的参数  
-        success : function(data) {
-          alert("成功")
-        },
-        error : function() {
-          alert('fail');
-        }
-      });
- 
-}
-// function downFun() {
-//     $.get(hostUrl + '/api/v1/version/appVersion?custom=LuckyParty', function(data) {
-//         if (data.code == 200) {
-//             ios = iosPrefix + data.data.ios.downloadUrl;
-//             ad = data.data.android.downloadUrl;
-//             // ios =iosPrefix+'https://luckyparty.oss-cn-beijing.aliyuncs.com/public/download/luckyparty/v2.0.4/manifest.plist';
-//             // ad ='http://luckyparty.ufile.ucloud.com.cn/apk/LuckyParty_V2.0.3.apk';
-//             $('.js-ios').attr("href", ios)
-//                 // $('.js-ad').attr("href",ad)
-//             $('.pcjs-ad').attr("href", ad)
-//         }
-//     }, "json")
-// }
+
 
 
 //点击andriod开启遮罩,引导用户在浏览器打开
 $('.js-ad').click(function() {
     var isWeixin = is_weixin();
     var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-    var weixinTip = $('<div id="weixinTip"><p><img src="/img/top_1.png" alt=""/>点击右上角，在浏览器打开</p></div>');
-
+    var weixinTip = $('<div id="weixinTip"><p><img src="https://winchain2018.github.io/luckyParty/img/top_1.png" alt=""/>点击右上角，在浏览器打开</p></div>');
     if (isWeixin) {
         $("body").append(weixinTip);
     } else {
@@ -72,7 +39,6 @@ $('.js-ad').click(function() {
     $("#weixinTip").click(function() {
         $("#weixinTip").remove();
     });
-
 })
 $('.js-ios').click(function() {
     var isWeixin = is_weixin();
@@ -87,5 +53,4 @@ $('.js-ios').click(function() {
     $("#weixinTip").click(function() {
         $("#weixinTip").remove();
     });
-
 })
