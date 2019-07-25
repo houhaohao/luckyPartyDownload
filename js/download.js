@@ -11,15 +11,26 @@ var ios = '';
 var ad = '';
 var iosPrefix = 'itms-services://?action=download-manifest&url=';
 // var hostUrl = "http://api.bcos.one";
-// var hostUrl = "http://luckyparty.minervip.io"
-var hostUrl = "http://106.75.27.25:8086"
+var hostUrl = "http://luckyparty.minervip.io"
+// var hostUrl = "http://106.75.27.25:8086"
 downFun()
+function downFun2() {
+    $.get(hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty', function(data) {
+        if (data.code == 200) {
+            ios = iosPrefix + data.data.ios.downloadUrl;
+            ad = data.data.android.downloadUrl;
+            $('.js-ios').attr("href", ios)
+                // $('.js-ad').attr("href",ad)
+            $('.pcjs-ad').attr("href", ad)
+        }
+    }, "json")
+}
 function downFun() { 
   
     $.ajax({
         type : "get",
         async : false,
-        url : "http://106.75.27.25:8086/api/v1/version/appVersion?custom=LuckyParty",
+        url : "hostUrl + '/api/v1/version/getAppVersion?custom=LuckyParty'",
         dataType : "jsonp", //数据类型为jsonp  
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         jsonp : "callback", //服务端用于接收callback调用的function名的参数  
